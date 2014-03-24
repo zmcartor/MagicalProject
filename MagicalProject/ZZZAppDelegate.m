@@ -9,22 +9,13 @@
 #import "ZZZAppDelegate.h"
 #import <CoreData+MagicalRecord.h>
 
-@interface ZZZAppDelegate ()
-
-@property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property(nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-
-@end
-
 @implementation ZZZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    self.managedObjectContext = [NSManagedObjectContext MR_defaultContext];
     
-    NSLog(@"all set up!");
+    //TODO, import some data and then setup a FRC for the tableView
     
     return YES;
 }
