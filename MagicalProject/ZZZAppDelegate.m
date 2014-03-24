@@ -26,24 +26,18 @@
         NSLog(@"error: %@", error);
     }
   
-    
-    // MagicalRecord plum does not work!
-    
-    __block NSArray *spells;
-   
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        spells = [MagicSpell MR_importFromArray:parsedJSON inContext:localContext];
-        // spells is always nothing, whyyy ?
+        
+        // this is buggy and does not return all imported records.
+        [MagicSpell MR_importFromArray:parsedJSON inContext:localContext];
+        // async call so the fetchReq wont return the first time :/
+        
         NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"MagicSpell"];
         NSError *error = nil;
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF.id > 1"];
-        [fetch setPredicate:pred];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"id > 1"];
+        fetch.predicate = pred;
         NSArray *stuff = [localContext executeFetchRequest:fetch error:&error];
-        
-        // completely blank, whhy?
-        MagicSpell *sd = stuff[0];
-        
-        NSLog(@"A name of a spell",sd.name);
+        NSLog(@"fetched stuff is: %@", stuff);
     }];
    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
