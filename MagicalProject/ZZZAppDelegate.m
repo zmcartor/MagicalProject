@@ -8,14 +8,49 @@
 
 #import "ZZZAppDelegate.h"
 #import <CoreData+MagicalRecord.h>
+#import "MagicSpell.h"
+#import "ZZZViewController.h"
 
 @implementation ZZZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    
     //TODO, import some data and then setup a FRC for the tableView
+   
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"magical-items" ofType:@"json"];
+    NSData *jsonArray = [[NSData alloc] initWithContentsOfFile:filePath];
+    
+    NSError *error;
+    NSArray *parsedJSON = [NSJSONSerialization JSONObjectWithData:jsonArray options:NSJSONReadingAllowFragments error:&error];
+    if (error) {
+        NSLog(@"error: %@", error);
+    }
+  
+    
+    // MagicalRecord plum does not work!
+    
+    __block NSArray *spells;
+   
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        spells = [MagicSpell MR_importFromArray:parsedJSON inContext:localContext];
+        // spells is always nothing, whyyy ?
+        NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"MagicSpell"];
+        NSError *error = nil;
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF.id > 1"];
+        [fetch setPredicate:pred];
+        NSArray *stuff = [localContext executeFetchRequest:fetch error:&error];
+        
+        // completely blank, whhy?
+        MagicSpell *sd = stuff[0];
+        
+        NSLog(@"A name of a spell",sd.name);
+    }];
+   
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIViewController *viewController = [[ZZZViewController alloc] init];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
