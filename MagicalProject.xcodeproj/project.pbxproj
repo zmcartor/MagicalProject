@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		92D9484818E0A0E40069C2CA /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 92D9484918E0A0E40069C2CA /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				92D9484C18E0A0FA0069C2CA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1ADC5B2C11DA4A87977B56AB /* libPods-MagicalProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83689EC03D5543D6B1BE522B /* libPods-MagicalProject.a */; };
 		9243705718DCE1B1007A4FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9243705618DCE1B1007A4FD7 /* Foundation.framework */; };
@@ -260,6 +274,7 @@
 			targets = (
 				9243705218DCE1B1007A4FD7 /* MagicalProject */,
 				9243707618DCE1B1007A4FD7 /* MagicalProjectTests */,
+				92D9484818E0A0E40069C2CA /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -288,6 +303,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		92D9484C18E0A0FA0069C2CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/local/bin/mogenerator -m MagicalProject/MagicalProjectModel.xcdatamodeld -O MagicalProject/Model --template-var arc=true";
+		};
 		952ABACDE192451FAB0E9644 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +556,20 @@
 			};
 			name = Release;
 		};
+		92D9484A18E0A0E40069C2CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92D9484B18E0A0E40069C2CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -557,6 +599,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		92D9484918E0A0E40069C2CA /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D9484A18E0A0E40069C2CA /* Debug */,
+				92D9484B18E0A0E40069C2CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
