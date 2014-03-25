@@ -9,7 +9,6 @@
 #import "ZZZAppDelegate.h"
 #import <CoreData+MagicalRecord.h>
 #import "MagicSpell.h"
-#import "ZZZViewController.h"
 
 @implementation ZZZAppDelegate
 
@@ -41,12 +40,8 @@
         NSLog(@"fetched stuff is: %@", stuff);
     }];
      */
-    
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    
-    UIViewController *viewController = [[ZZZViewController alloc] init];
-    self.window.rootViewController = viewController;
-    [self.window makeKeyAndVisible];
+   
+    // TODO load up the storyboard
     
     return YES;
 }

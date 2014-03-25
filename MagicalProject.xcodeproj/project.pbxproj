@@ -29,14 +29,13 @@
 		9243706318DCE1B1007A4FD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243706218DCE1B1007A4FD7 /* main.m */; };
 		9243706718DCE1B1007A4FD7 /* ZZZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243706618DCE1B1007A4FD7 /* ZZZAppDelegate.m */; };
 		9243706A18DCE1B1007A4FD7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9243706818DCE1B1007A4FD7 /* Main_iPhone.storyboard */; };
-		9243706D18DCE1B1007A4FD7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9243706B18DCE1B1007A4FD7 /* Main_iPad.storyboard */; };
-		9243707018DCE1B1007A4FD7 /* ZZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243706F18DCE1B1007A4FD7 /* ZZZViewController.m */; };
 		9243707218DCE1B1007A4FD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9243707118DCE1B1007A4FD7 /* Images.xcassets */; };
 		9243707918DCE1B1007A4FD7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9243707818DCE1B1007A4FD7 /* XCTest.framework */; };
 		9243707A18DCE1B1007A4FD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9243705618DCE1B1007A4FD7 /* Foundation.framework */; };
 		9243707B18DCE1B1007A4FD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9243705A18DCE1B1007A4FD7 /* UIKit.framework */; };
 		9243708318DCE1B1007A4FD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9243708118DCE1B1007A4FD7 /* InfoPlist.strings */; };
 		9243708518DCE1B1007A4FD7 /* MagicalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243708418DCE1B1007A4FD7 /* MagicalProjectTests.m */; };
+		9287D55018E1E4A300A10A6B /* ZZZTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */; };
 		92D9482518DCE39C0069C2CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D9482418DCE39C0069C2CA /* CoreData.framework */; };
 		92D9482818DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92D9482618DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld */; };
 		92D9482F18DDF3FF0069C2CA /* magical-items.json in Resources */ = {isa = PBXBuildFile; fileRef = 92D9482E18DDF3FF0069C2CA /* magical-items.json */; };
@@ -68,15 +67,14 @@
 		9243706518DCE1B1007A4FD7 /* ZZZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZZAppDelegate.h; sourceTree = "<group>"; };
 		9243706618DCE1B1007A4FD7 /* ZZZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZZAppDelegate.m; sourceTree = "<group>"; };
 		9243706918DCE1B1007A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		9243706C18DCE1B1007A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		9243706E18DCE1B1007A4FD7 /* ZZZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZZViewController.h; sourceTree = "<group>"; };
-		9243706F18DCE1B1007A4FD7 /* ZZZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZZViewController.m; sourceTree = "<group>"; };
 		9243707118DCE1B1007A4FD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9243707718DCE1B1007A4FD7 /* MagicalProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicalProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9243707818DCE1B1007A4FD7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9243708018DCE1B1007A4FD7 /* MagicalProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MagicalProjectTests-Info.plist"; sourceTree = "<group>"; };
 		9243708218DCE1B1007A4FD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9243708418DCE1B1007A4FD7 /* MagicalProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicalProjectTests.m; sourceTree = "<group>"; };
+		9287D54E18E1E4A300A10A6B /* ZZZTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZZTableViewController.h; sourceTree = "<group>"; };
+		9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZZTableViewController.m; sourceTree = "<group>"; };
 		92D9482418DCE39C0069C2CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		92D9482718DCE74C0069C2CA /* MagicalProjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MagicalProjectModel.xcdatamodel; sourceTree = "<group>"; };
 		92D9482918DCE8410069C2CA /* MagicalProjectModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MagicalProjectModel 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -154,9 +152,8 @@
 				9243706618DCE1B1007A4FD7 /* ZZZAppDelegate.m */,
 				92D9482618DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld */,
 				9243706818DCE1B1007A4FD7 /* Main_iPhone.storyboard */,
-				9243706B18DCE1B1007A4FD7 /* Main_iPad.storyboard */,
-				9243706E18DCE1B1007A4FD7 /* ZZZViewController.h */,
-				9243706F18DCE1B1007A4FD7 /* ZZZViewController.m */,
+				9287D54E18E1E4A300A10A6B /* ZZZTableViewController.h */,
+				9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */,
 				9243707118DCE1B1007A4FD7 /* Images.xcassets */,
 				9243705D18DCE1B1007A4FD7 /* Supporting Files */,
 			);
@@ -284,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9243706D18DCE1B1007A4FD7 /* Main_iPad.storyboard in Resources */,
 				9243707218DCE1B1007A4FD7 /* Images.xcassets in Resources */,
 				9243706A18DCE1B1007A4FD7 /* Main_iPhone.storyboard in Resources */,
 				92D9482F18DDF3FF0069C2CA /* magical-items.json in Resources */,
@@ -354,9 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D9482818DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld in Sources */,
+				9287D55018E1E4A300A10A6B /* ZZZTableViewController.m in Sources */,
 				9243706318DCE1B1007A4FD7 /* main.m in Sources */,
 				9243706718DCE1B1007A4FD7 /* ZZZAppDelegate.m in Sources */,
-				9243707018DCE1B1007A4FD7 /* ZZZViewController.m in Sources */,
 				92D9484718E09DD50069C2CA /* MagicSpell.m in Sources */,
 				92D9484618E09DD50069C2CA /* _MagicSpell.m in Sources */,
 			);
@@ -395,14 +391,6 @@
 				9243706918DCE1B1007A4FD7 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		9243706B18DCE1B1007A4FD7 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9243706C18DCE1B1007A4FD7 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		9243708118DCE1B1007A4FD7 /* InfoPlist.strings */ = {
@@ -607,6 +595,7 @@
 				92D9484B18E0A0E40069C2CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
