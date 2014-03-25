@@ -25,21 +25,23 @@
     if (error) {
         NSLog(@"error: %@", error);
     }
+
+    [MagicSpell MR_importFromArray:parsedJSON ];
   
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        
-        // this is buggy and does not return all imported records.
-        [MagicSpell MR_importFromArray:parsedJSON inContext:localContext];
-        // async call so the fetchReq wont return the first time :/
-        
+    // segue into the ViewController and show some cool stuff! :)
+    
+    /*
         NSFetchRequest *fetch = [[NSFetchRequest alloc] initWithEntityName:@"MagicSpell"];
-        NSError *error = nil;
+        NSError *fetchError = nil;
         NSPredicate *pred = [NSPredicate predicateWithFormat:@"id > 1"];
         fetch.predicate = pred;
-        NSArray *stuff = [localContext executeFetchRequest:fetch error:&error];
+        
+        // TODO what is correct way to fetch here ?
+        NSArray *stuff = [ [NSManagedObjectContext MR_defaultContext] executeFetchRequest:fetch error:&fetchError];
         NSLog(@"fetched stuff is: %@", stuff);
     }];
-   
+     */
+    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
     UIViewController *viewController = [[ZZZViewController alloc] init];
