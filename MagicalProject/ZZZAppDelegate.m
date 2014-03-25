@@ -26,7 +26,7 @@
     }
 
     [MagicSpell MR_importFromArray:parsedJSON ];
-  
+ 
     // segue into the ViewController and show some cool stuff! :)
     
     /*

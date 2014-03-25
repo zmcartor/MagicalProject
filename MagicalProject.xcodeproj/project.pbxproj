@@ -36,6 +36,7 @@
 		9243708318DCE1B1007A4FD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9243708118DCE1B1007A4FD7 /* InfoPlist.strings */; };
 		9243708518DCE1B1007A4FD7 /* MagicalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9243708418DCE1B1007A4FD7 /* MagicalProjectTests.m */; };
 		9287D55018E1E4A300A10A6B /* ZZZTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */; };
+		92AA50C918E22C7E00983E6F /* ZZZSpellDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AA50C818E22C7E00983E6F /* ZZZSpellDetailsViewController.m */; };
 		92D9482518DCE39C0069C2CA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D9482418DCE39C0069C2CA /* CoreData.framework */; };
 		92D9482818DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92D9482618DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld */; };
 		92D9482F18DDF3FF0069C2CA /* magical-items.json in Resources */ = {isa = PBXBuildFile; fileRef = 92D9482E18DDF3FF0069C2CA /* magical-items.json */; };
@@ -75,6 +76,8 @@
 		9243708418DCE1B1007A4FD7 /* MagicalProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicalProjectTests.m; sourceTree = "<group>"; };
 		9287D54E18E1E4A300A10A6B /* ZZZTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZZTableViewController.h; sourceTree = "<group>"; };
 		9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZZTableViewController.m; sourceTree = "<group>"; };
+		92AA50C718E22C7E00983E6F /* ZZZSpellDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZZSpellDetailsViewController.h; sourceTree = "<group>"; };
+		92AA50C818E22C7E00983E6F /* ZZZSpellDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZZSpellDetailsViewController.m; sourceTree = "<group>"; };
 		92D9482418DCE39C0069C2CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		92D9482718DCE74C0069C2CA /* MagicalProjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MagicalProjectModel.xcdatamodel; sourceTree = "<group>"; };
 		92D9482918DCE8410069C2CA /* MagicalProjectModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MagicalProjectModel 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				9243706618DCE1B1007A4FD7 /* ZZZAppDelegate.m */,
 				92D9482618DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld */,
 				9243706818DCE1B1007A4FD7 /* Main_iPhone.storyboard */,
+				92AA50C718E22C7E00983E6F /* ZZZSpellDetailsViewController.h */,
+				92AA50C818E22C7E00983E6F /* ZZZSpellDetailsViewController.m */,
 				9287D54E18E1E4A300A10A6B /* ZZZTableViewController.h */,
 				9287D54F18E1E4A300A10A6B /* ZZZTableViewController.m */,
 				9243707118DCE1B1007A4FD7 /* Images.xcassets */,
@@ -350,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D9482818DCE74C0069C2CA /* MagicalProjectModel.xcdatamodeld in Sources */,
+				92AA50C918E22C7E00983E6F /* ZZZSpellDetailsViewController.m in Sources */,
 				9287D55018E1E4A300A10A6B /* ZZZTableViewController.m in Sources */,
 				9243706318DCE1B1007A4FD7 /* main.m in Sources */,
 				9243706718DCE1B1007A4FD7 /* ZZZAppDelegate.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ZZZTableViewController.h
+//  ZZZSpellDetailsViewController.h
 //  MagicalProject
 //
 //  Created by _Zach on 3/25/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZZZTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface ZZZSpellDetailsViewController : UIViewController
 
 @end
