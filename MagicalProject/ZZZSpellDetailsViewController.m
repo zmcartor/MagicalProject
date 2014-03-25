@@ -7,40 +7,48 @@
 //
 
 #import "ZZZSpellDetailsViewController.h"
+#import "MagicSpell.h"
 
 @interface ZZZSpellDetailsViewController ()
+
+@property(nonatomic, strong) MagicSpell *spellModel;
 
 @end
 
 @implementation ZZZSpellDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (instancetype)initWithSpell:(MagicSpell *)spell {
+    self = [super init];
     if (self) {
-        // Custom initialization
+        _spellModel = spell;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    //wtf why?
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = self.spellModel.name;
+
+    self.nameLabel.text = self.spellModel.name;
+    self.manaLabel.text = [NSString stringWithFormat:@"%@", self.spellModel.mana];
+    self.damageLabel.text = [NSString stringWithFormat:@"%@", self.spellModel.damage];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)castButtonTouched:(id)sender {
+   
+    NSString *message = [NSString stringWithFormat:@"%@ cast!", self.spellModel.name];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Whoosh" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // rien
+    // update something on the model and save in Core Data
+    
 }
-*/
 
 @end

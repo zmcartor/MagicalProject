@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZZZSpellDetailsViewController : UIViewController
+@class MagicSpell;
+
+@interface ZZZSpellDetailsViewController : UIViewController <UIAlertViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *manaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *damageLabel;
+- (IBAction)castButtonTouched:(id)sender;
+
+- (instancetype)initWithSpell:(MagicSpell *)spell;
 
 @end

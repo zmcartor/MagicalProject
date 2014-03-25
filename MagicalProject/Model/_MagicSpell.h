@@ -4,11 +4,12 @@
 #import <CoreData/CoreData.h>
 
 extern const struct MagicSpellAttributes {
+	__unsafe_unretained NSString *castCount;
 	__unsafe_unretained NSString *damage;
 	__unsafe_unretained NSString *id;
+	__unsafe_unretained NSString *magicSpellID;
 	__unsafe_unretained NSString *mana;
 	__unsafe_unretained NSString *name;
-	__unsafe_unretained NSString *timestamp;
 } MagicSpellAttributes;
 
 @interface MagicSpellID : NSManagedObjectID {}
@@ -19,6 +20,14 @@ extern const struct MagicSpellAttributes {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (MagicSpellID*)objectID;
+
+@property (nonatomic, strong) NSNumber* castCount;
+
+@property (atomic) int16_t castCountValue;
+- (int16_t)castCountValue;
+- (void)setCastCountValue:(int16_t)value_;
+
+//- (BOOL)validateCastCount:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* damage;
 
@@ -36,6 +45,14 @@ extern const struct MagicSpellAttributes {
 
 //- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSNumber* magicSpellID;
+
+@property (atomic) int64_t magicSpellIDValue;
+- (int64_t)magicSpellIDValue;
+- (void)setMagicSpellIDValue:(int64_t)value_;
+
+//- (BOOL)validateMagicSpellID:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSNumber* mana;
 
 @property (atomic) int32_t manaValue;
@@ -48,13 +65,15 @@ extern const struct MagicSpellAttributes {
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSDate* timestamp;
-
-//- (BOOL)validateTimestamp:(id*)value_ error:(NSError**)error_;
-
 @end
 
 @interface _MagicSpell (CoreDataGeneratedPrimitiveAccessors)
+
+- (NSNumber*)primitiveCastCount;
+- (void)setPrimitiveCastCount:(NSNumber*)value;
+
+- (int16_t)primitiveCastCountValue;
+- (void)setPrimitiveCastCountValue:(int16_t)value_;
 
 - (NSNumber*)primitiveDamage;
 - (void)setPrimitiveDamage:(NSNumber*)value;
@@ -68,6 +87,12 @@ extern const struct MagicSpellAttributes {
 - (int64_t)primitiveIdValue;
 - (void)setPrimitiveIdValue:(int64_t)value_;
 
+- (NSNumber*)primitiveMagicSpellID;
+- (void)setPrimitiveMagicSpellID:(NSNumber*)value;
+
+- (int64_t)primitiveMagicSpellIDValue;
+- (void)setPrimitiveMagicSpellIDValue:(int64_t)value_;
+
 - (NSNumber*)primitiveMana;
 - (void)setPrimitiveMana:(NSNumber*)value;
 
@@ -76,8 +101,5 @@ extern const struct MagicSpellAttributes {
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
-
-- (NSDate*)primitiveTimestamp;
-- (void)setPrimitiveTimestamp:(NSDate*)value;
 
 @end

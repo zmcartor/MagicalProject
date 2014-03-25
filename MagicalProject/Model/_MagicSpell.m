@@ -4,11 +4,12 @@
 #import "_MagicSpell.h"
 
 const struct MagicSpellAttributes MagicSpellAttributes = {
+	.castCount = @"castCount",
 	.damage = @"damage",
 	.id = @"id",
+	.magicSpellID = @"magicSpellID",
 	.mana = @"mana",
 	.name = @"name",
-	.timestamp = @"timestamp",
 };
 
 @implementation MagicSpellID
@@ -37,6 +38,11 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"castCountValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"castCount"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 	if ([key isEqualToString:@"damageValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"damage"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -47,6 +53,11 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
+	if ([key isEqualToString:@"magicSpellIDValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"magicSpellID"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 	if ([key isEqualToString:@"manaValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"mana"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -54,6 +65,26 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 	}
 
 	return keyPaths;
+}
+
+@dynamic castCount;
+
+- (int16_t)castCountValue {
+	NSNumber *result = [self castCount];
+	return [result shortValue];
+}
+
+- (void)setCastCountValue:(int16_t)value_ {
+	[self setCastCount:@(value_)];
+}
+
+- (int16_t)primitiveCastCountValue {
+	NSNumber *result = [self primitiveCastCount];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveCastCountValue:(int16_t)value_ {
+	[self setPrimitiveCastCount:@(value_)];
 }
 
 @dynamic damage;
@@ -96,6 +127,26 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 	[self setPrimitiveId:@(value_)];
 }
 
+@dynamic magicSpellID;
+
+- (int64_t)magicSpellIDValue {
+	NSNumber *result = [self magicSpellID];
+	return [result longLongValue];
+}
+
+- (void)setMagicSpellIDValue:(int64_t)value_ {
+	[self setMagicSpellID:@(value_)];
+}
+
+- (int64_t)primitiveMagicSpellIDValue {
+	NSNumber *result = [self primitiveMagicSpellID];
+	return [result longLongValue];
+}
+
+- (void)setPrimitiveMagicSpellIDValue:(int64_t)value_ {
+	[self setPrimitiveMagicSpellID:@(value_)];
+}
+
 @dynamic mana;
 
 - (int32_t)manaValue {
@@ -117,8 +168,6 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 }
 
 @dynamic name;
-
-@dynamic timestamp;
 
 @end
 
