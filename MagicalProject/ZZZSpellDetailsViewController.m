@@ -11,8 +11,6 @@
 
 @interface ZZZSpellDetailsViewController ()
 
-@property(nonatomic, strong) MagicSpell *spellModel;
-
 @end
 
 @implementation ZZZSpellDetailsViewController
@@ -35,7 +33,7 @@
 
     self.nameLabel.text = self.spellModel.name;
     self.manaLabel.text = [NSString stringWithFormat:@"%@", self.spellModel.mana];
-    self.damageLabel.text = [NSString stringWithFormat:@"%@", self.spellModel.damage];
+    self.castLabel.text = [NSString stringWithFormat:@"%@", self.spellModel.castCount];
 }
 
 - (IBAction)castButtonTouched:(id)sender {

@@ -13,7 +13,10 @@
 @interface ZZZSpellDetailsViewController : UIViewController <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *manaLabel;
-@property (weak, nonatomic) IBOutlet UILabel *damageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *castLabel;
+
+@property(nonatomic, strong) MagicSpell *spellModel;
+
 - (IBAction)castButtonTouched:(id)sender;
 
 - (instancetype)initWithSpell:(MagicSpell *)spell;

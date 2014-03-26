@@ -14,16 +14,13 @@
 @interface ZZZTableViewController ()
 
 @property(strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-
+@property(strong, nonatomic) MagicSpell *selectedModel;
 @end
 
 @implementation ZZZTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuse"];
-   
     self.fetchedResultsController = [MagicSpell MR_fetchAllSortedBy:@"id" ascending:YES withPredicate:nil groupBy:nil delegate:self];
 }
 
@@ -81,10 +78,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    // TODO, set the style type as something better here.
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuse" forIndexPath:indexPath];
-    
-    NSLog(@"the cell: %@", cell);
+    // use lame cell dequeue way
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuse"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"reuse"];
+    }
     
     MagicSpell *magicSpell = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = magicSpell.name;
@@ -94,10 +92,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    // this isn't loading the nib, so storyBoard stuff doesn't happen hmmm.
-    MagicSpell *spell = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    ZZZSpellDetailsViewController *detail = [[ZZZSpellDetailsViewController alloc] initWithSpell:spell];
-    [self.navigationController pushViewController:detail animated:YES];
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    // need to stash this because indexPathForCell: is broken on iOS7
+    self.selectedModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"spellDetail" sender:cell];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"spellDetail"]) {
+        ZZZSpellDetailsViewController *detail = [segue destinationViewController];
+        detail.spellModel = self.selectedModel;
+    }
 }
 
 @end

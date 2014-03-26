@@ -5,11 +5,13 @@
 
 const struct MagicSpellAttributes MagicSpellAttributes = {
 	.castCount = @"castCount",
-	.damage = @"damage",
 	.id = @"id",
-	.magicSpellID = @"magicSpellID",
 	.mana = @"mana",
 	.name = @"name",
+};
+
+const struct MagicSpellUserInfo MagicSpellUserInfo = {
+	.relatedByAttribute = @"id",
 };
 
 @implementation MagicSpellID
@@ -43,18 +45,8 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"damageValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"damage"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
 	if ([key isEqualToString:@"idValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"id"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-	if ([key isEqualToString:@"magicSpellIDValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"magicSpellID"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -87,26 +79,6 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 	[self setPrimitiveCastCount:@(value_)];
 }
 
-@dynamic damage;
-
-- (int16_t)damageValue {
-	NSNumber *result = [self damage];
-	return [result shortValue];
-}
-
-- (void)setDamageValue:(int16_t)value_ {
-	[self setDamage:@(value_)];
-}
-
-- (int16_t)primitiveDamageValue {
-	NSNumber *result = [self primitiveDamage];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveDamageValue:(int16_t)value_ {
-	[self setPrimitiveDamage:@(value_)];
-}
-
 @dynamic id;
 
 - (int64_t)idValue {
@@ -125,26 +97,6 @@ const struct MagicSpellAttributes MagicSpellAttributes = {
 
 - (void)setPrimitiveIdValue:(int64_t)value_ {
 	[self setPrimitiveId:@(value_)];
-}
-
-@dynamic magicSpellID;
-
-- (int64_t)magicSpellIDValue {
-	NSNumber *result = [self magicSpellID];
-	return [result longLongValue];
-}
-
-- (void)setMagicSpellIDValue:(int64_t)value_ {
-	[self setMagicSpellID:@(value_)];
-}
-
-- (int64_t)primitiveMagicSpellIDValue {
-	NSNumber *result = [self primitiveMagicSpellID];
-	return [result longLongValue];
-}
-
-- (void)setPrimitiveMagicSpellIDValue:(int64_t)value_ {
-	[self setPrimitiveMagicSpellID:@(value_)];
 }
 
 @dynamic mana;

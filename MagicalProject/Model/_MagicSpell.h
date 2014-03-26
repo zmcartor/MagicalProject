@@ -5,12 +5,14 @@
 
 extern const struct MagicSpellAttributes {
 	__unsafe_unretained NSString *castCount;
-	__unsafe_unretained NSString *damage;
 	__unsafe_unretained NSString *id;
-	__unsafe_unretained NSString *magicSpellID;
 	__unsafe_unretained NSString *mana;
 	__unsafe_unretained NSString *name;
 } MagicSpellAttributes;
+
+extern const struct MagicSpellUserInfo {
+	__unsafe_unretained NSString *relatedByAttribute;
+} MagicSpellUserInfo;
 
 @interface MagicSpellID : NSManagedObjectID {}
 @end
@@ -29,14 +31,6 @@ extern const struct MagicSpellAttributes {
 
 //- (BOOL)validateCastCount:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* damage;
-
-@property (atomic) int16_t damageValue;
-- (int16_t)damageValue;
-- (void)setDamageValue:(int16_t)value_;
-
-//- (BOOL)validateDamage:(id*)value_ error:(NSError**)error_;
-
 @property (nonatomic, strong) NSNumber* id;
 
 @property (atomic) int64_t idValue;
@@ -44,14 +38,6 @@ extern const struct MagicSpellAttributes {
 - (void)setIdValue:(int64_t)value_;
 
 //- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSNumber* magicSpellID;
-
-@property (atomic) int64_t magicSpellIDValue;
-- (int64_t)magicSpellIDValue;
-- (void)setMagicSpellIDValue:(int64_t)value_;
-
-//- (BOOL)validateMagicSpellID:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* mana;
 
@@ -75,23 +61,11 @@ extern const struct MagicSpellAttributes {
 - (int16_t)primitiveCastCountValue;
 - (void)setPrimitiveCastCountValue:(int16_t)value_;
 
-- (NSNumber*)primitiveDamage;
-- (void)setPrimitiveDamage:(NSNumber*)value;
-
-- (int16_t)primitiveDamageValue;
-- (void)setPrimitiveDamageValue:(int16_t)value_;
-
 - (NSNumber*)primitiveId;
 - (void)setPrimitiveId:(NSNumber*)value;
 
 - (int64_t)primitiveIdValue;
 - (void)setPrimitiveIdValue:(int64_t)value_;
-
-- (NSNumber*)primitiveMagicSpellID;
-- (void)setPrimitiveMagicSpellID:(NSNumber*)value;
-
-- (int64_t)primitiveMagicSpellIDValue;
-- (void)setPrimitiveMagicSpellIDValue:(int64_t)value_;
 
 - (NSNumber*)primitiveMana;
 - (void)setPrimitiveMana:(NSNumber*)value;
