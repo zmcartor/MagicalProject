@@ -8,6 +8,7 @@
 
 #import "ZZZSpellDetailsViewController.h"
 #import "MagicSpell.h"
+#import <CoreData+MagicalRecord.h>
 
 @interface ZZZSpellDetailsViewController ()
 
@@ -44,9 +45,28 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    // rien
-    // update something on the model and save in Core Data
+
+    // update and save on main context, what happens ?
+    self.spellModel.castCountValue+=1;
+    NSError *errord;
+    [[NSManagedObjectContext MR_defaultContext] save:&errord];
     
+    if (errord) {
+        NSLog(@"ERRORD: %@", errord);
+    }
+   
+    
+    
+    /*
+    __block typeof(self) blockSelf = self;
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        
+       [blockSelf.spellModel]
+        
+        [localContext insertObject:blockSelf.spellModel];
+        self.spellModel.castCountValue+=1;
+    }];
+     */
 }
 
 @end

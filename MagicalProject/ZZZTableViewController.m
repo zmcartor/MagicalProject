@@ -51,6 +51,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             NSLog(@"record has changed!!");
             break;
             
