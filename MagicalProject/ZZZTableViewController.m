@@ -23,30 +23,8 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuse"];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"MagicSpell"];
-    
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                              initWithKey:@"id" ascending:YES];
-    
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
-    [fetchRequest setFetchBatchSize:20];
    
-    // TODO what is correct context to use here ?
-    NSFetchedResultsController *theFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil
-                                                   cacheName:@"SpellsCache"];
-    
-    self.fetchedResultsController = theFetchedResultsController;
-    theFetchedResultsController.delegate = self;
-   
-    NSError *errorFetch = nil;
-    [self.fetchedResultsController performFetch:&errorFetch];
-    
-    if (errorFetch){
-        NSLog(@"error fetching spells: %@", errorFetch);
-    }
+    self.fetchedResultsController = [MagicSpell MR_fetchAllSortedBy:@"id" ascending:YES withPredicate:nil groupBy:nil delegate:self];
 }
 
 // NOTE - this is computationally expensive to reload rows after every single update.
