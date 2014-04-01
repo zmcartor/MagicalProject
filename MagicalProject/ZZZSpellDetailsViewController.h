@@ -19,6 +19,13 @@
 
 - (IBAction)castButtonTouched:(id)sender;
 
+/**
+ *  Super awesome method to initialize the method with a model. Now THAT is some software engineering haha
+ *
+ *  @param spell the spell y'all want to cast yoyoyo do you get me ? This is really cool then.
+ *
+ *  @return a new instance of this stuff
+ */
 - (instancetype)initWithSpell:(MagicSpell *)spell;
 
 @end

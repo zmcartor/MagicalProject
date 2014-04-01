@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		92A5788418E4BFEC0048B030 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 92A5788718E4BFEC0048B030 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				92A5788818E4C0160048B030 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
 		92D9484818E0A0E40069C2CA /* Mogenerator */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 92D9484918E0A0E40069C2CA /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
@@ -277,6 +288,7 @@
 				9243705218DCE1B1007A4FD7 /* MagicalProject */,
 				9243707618DCE1B1007A4FD7 /* MagicalProjectTests */,
 				92D9484818E0A0E40069C2CA /* Mogenerator */,
+				92A5788418E4BFEC0048B030 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +316,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		92A5788818E4C0160048B030 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"Simplicate\" \\\n--company-id \"com.simplicate\" \\\n--output \"/Users/Zach/docs\" \\\n--install-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--merge-categories \\\n--exit-threshold 2 \\\n--docset-platform-family iphoneos \\\n--ignore \"*.m\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}\"";
+		};
 		92D9484C18E0A0FA0069C2CA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,6 +575,20 @@
 			};
 			name = Release;
 		};
+		92A5788518E4BFEC0048B030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92A5788618E4BFEC0048B030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		92D9484A18E0A0E40069C2CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,6 +629,15 @@
 			buildConfigurations = (
 				9243708C18DCE1B1007A4FD7 /* Debug */,
 				9243708D18DCE1B1007A4FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A5788718E4BFEC0048B030 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A5788518E4BFEC0048B030 /* Debug */,
+				92A5788618E4BFEC0048B030 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
